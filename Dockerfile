@@ -32,7 +32,8 @@ RUN chown -R steam:steam ${SERVER} ${LOGS} ${DATA} && \
 
 RUN apt update && \
     apt install --no-install-recommends -y xvfb wine && \
-    apt clean
+    apt clean && \
+    rm -rf /var/lib/apt/lists/* 
 
 USER steam
 
