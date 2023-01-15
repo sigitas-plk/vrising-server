@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  vrising:
+    image: sigitaspl/vrising:latest
+    build: .
+    environment:
+      - TZ=Europe/London
+    volumes:
+      - ./saves:/vrising/persistentdata/Saves
+      - ./settings:/vrising/persistentdata/Settings
+      - ./logs:/vrising/logs
+    ports:
+      - 27015:9876/udp
+      - 27016:9877/udp
